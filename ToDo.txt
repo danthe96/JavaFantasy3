@@ -1,0 +1,11 @@
+Marvin (IHICH):
+-Warpmarker vervollständigen
+-Dungeon-Design
+-NPC-Sprites
+
+Febbe/Danthe:
+-Debug-Indikator (HUD)
+-Warps
+-evtl. NPC Code
+
+[P.S.: verfolständigt MICH]
