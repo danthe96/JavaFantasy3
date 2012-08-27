@@ -103,9 +103,8 @@ public class MenüPanel extends JPanel
 					System.exit(0);				
 			}			  
 		  });
-	 // soundlib.loadSound("Opening", "sounds/01-Opening.mp3");
-	  soundlib.loadSound("ThePrelude", "sounds/16-ThePrelude.mp3");
-	  soundlib.loopSound("ThePrelude");
+	  soundlib.loadSound("menu", "sounds/16-ThePrelude.mp3");
+	  soundlib.loopSound("menu");
 }
 
 /*@Override
