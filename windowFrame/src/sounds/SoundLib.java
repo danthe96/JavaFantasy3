@@ -56,7 +56,7 @@ public class SoundLib {
   public void stop(){
 		  audio.close();
 		  audio=null;
-		  System.out.println(audio);
+
 	  
   }
     

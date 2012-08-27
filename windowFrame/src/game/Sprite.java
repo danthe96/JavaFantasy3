@@ -55,7 +55,6 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 	this.parentwidth = parent.getWidth();
 	stretch= (0.0+parentheight)/256;
     this.delay = delay;
-    System.out.println(getHeight());
     this.position.setLocation(0.0+parentwidth/2-(width/2*stretch), 0.0+parentheight/2-(height/2*stretch));     //problematisch
     loop_from = 0;
     loop_to = pics.length-1;

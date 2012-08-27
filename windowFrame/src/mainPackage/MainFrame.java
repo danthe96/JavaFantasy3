@@ -103,7 +103,6 @@ public class MainFrame extends JPanel implements BoolKeyListener{
 	 
 	 if(event.getKeyCode()==KeyEvent.VK_ESCAPE)
 			if(gP!=null){
-				//System.out.println("notnull");
 			mF.remove(mP);
 			mF.add(gP);
 			mF.setCurrentlyOpened(gP);
