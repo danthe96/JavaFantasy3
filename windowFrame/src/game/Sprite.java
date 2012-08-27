@@ -29,6 +29,7 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
   long last;
   long last2;
   double delta;
+  double stretch;
   
   Point2D.Double position = new Point2D.Double();
   Point2D.Double playerposition = new Point2D.Double();
@@ -52,17 +53,18 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
     this.parent = parent;
 	this.parentheight=parent.getHeight();  
 	this.parentwidth = parent.getWidth();
+	stretch= (0.0+parentheight)/256;
     this.delay = delay;
     System.out.println(getHeight());
-    this.position.setLocation(0.0+parentwidth/2-(width*(0.0+parentheight/256))/2, 0.0+parentheight/2-(height*(0.0+parentheight/256))/2);     //problematisch
-    System.out.println(position);
+    this.position.setLocation(0.0+parentwidth/2-(width/2*stretch), 0.0+parentheight/2-(height/2*stretch));     //problematisch
+    System.out.println(position+" "+parentwidth+" "+parentheight+" "+ height +" "+width+" "+ stretch);
     loop_from = 0;
     loop_to = pics.length-1;
     shadow = parent.loadPics("pics/overworldmapshadow.png",1)[0];
   }
 
   public void drawObjects(Graphics g) {
-    g.drawImage(pics[currentpic], (int)(position.getX()), (int) (position.getY()), (int)(width), (int) (height), null);
+    g.drawImage(pics[currentpic], (int)(position.getX()+0.5), (int) (position.getY()+0.5), (int)(width*stretch+0.5), (int) (height*stretch+0.5), null);
     g.setColor(Color.RED);
     }
     

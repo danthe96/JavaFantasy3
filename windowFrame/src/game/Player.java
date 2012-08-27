@@ -14,7 +14,7 @@ public class Player extends Sprite {
 	
 	@Override
 	public void drawObjects(Graphics g) {
-		g.drawImage(pics[currentpic], (int)position.getX(), (int) position.getY(), (int)(pics[currentpic].getWidth()*(0.0+parent.getHeight()/256)), (int) (pics[currentpic].getHeight()*(0.0+parent.getHeight()/256)), null);
+		g.drawImage(pics[currentpic], (int)(position.getX()+0.5), (int) (position.getY()+0.5), (int)(width*stretch+0.5), (int) (height*stretch+0.5), null);
 		//spritegröße muss sich nach auflösung bemessen, bei 256*256 ist es Originalgröße
 	}
 	  

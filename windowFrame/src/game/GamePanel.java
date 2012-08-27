@@ -51,6 +51,8 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	boolean right;
 	int loopfrom;
 	
+	double stretch;
+	
 	
 	
 	boolean debug; //debug
@@ -80,6 +82,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	}
 	
 	public void initialize(){
+		stretch=(0.0+getHeight())/256;
 		try {
 			map = ImageIO.read(getClass().getClassLoader().getResource("pics/overworldmap.png"));
 		} catch (IOException e) {
@@ -125,8 +128,9 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 			}
 		}
 		if(debug){
-		g.drawImage(shadow, (int)(getWidth()/2-playerposition.getX()*(0.0+getHeight()/256)), (int)(getHeight()/2-playerposition.getY()*(0.0+getHeight()/256)), (int)(4096*(0.0+getHeight()/256)), (int)(4096*(0.0+getHeight()/256)), this);
+		g.drawImage(shadow, (int)(getWidth()/2-playerposition.getX()*stretch), (int)(getHeight()/2-playerposition.getY()*stretch), (int)(4096*stretch), (int)(4096*stretch), this);
 		g.drawLine(getWidth()/2, 0, getWidth()/2, getHeight());
+		g.drawLine(getWidth()/2-1, 0, getWidth()/2-1, getHeight());
 		g.drawLine(0, getHeight()/2, getWidth(), getHeight()/2);
 		}
 		
@@ -184,14 +188,14 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		}
 		if(left){
 			if(!right){
-			//terra.setVerticalSpeed(0);		
+			terra.setVerticalSpeed(0);		
 			terra.setHorizontalSpeed(-speed);
 			terra.setLoop(9, 11);
 			}
 		}
 		if(right){
 			if(!left){
-			//terra.setVerticalSpeed(0);	
+			terra.setVerticalSpeed(0);	
 			terra.setHorizontalSpeed(speed);
 			terra.setLoop(3, 5);
 			}
@@ -216,8 +220,8 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 			}
 		}
 		
-		mapsquarewidth  = (int)(((0.0+getHeight())/256)*((playerposition.getX()-((bildx)*256)-128)));
-		mapsquareheight = (int)(((0.0+getHeight())/256)*((playerposition.getY()-((bildy)*256)-128)));
+		mapsquarewidth  = (int)(stretch*((playerposition.getX()-((bildx)*256)-128)));
+		mapsquareheight = (int)(stretch*((playerposition.getY()-((bildy)*256)-128)));
 
 		
 		
