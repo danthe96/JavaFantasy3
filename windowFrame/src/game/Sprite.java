@@ -17,7 +17,8 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
   BufferedImage[] pics;
   int currentpic = 0;    
   protected double dx;       
-  protected double dy;       
+  protected double dy;  
+  private boolean iscollision;
   int loop_from;
   int loop_to;
   int parentheight;
@@ -82,11 +83,18 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
     if(delta>0.25)
     	delta=0.25;
     
-    
+    if(iscollision){
+    	  willupcoll=false;
+    	  willrightcoll=false;
+    	  willleftcoll=false;
+    	  willdowncoll=false;
+    }
+    else{
     colldown();                                                                 //starten der voids zum überprüfen der kollidierung
     collright();
     collleft();
     collup();
+    }
     
   }
   
@@ -215,5 +223,9 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
   }
   public void setVerticalSpeed(double dy){
     this.dy = dy;
+  }
+  
+  public void setIsCollision(boolean iscollision){
+  	this.iscollision=iscollision;
   }
 }

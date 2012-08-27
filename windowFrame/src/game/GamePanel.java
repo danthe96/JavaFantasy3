@@ -20,6 +20,7 @@ import sounds.SoundLib;
 
 
 public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
+	
 	/*
      * Attribute (Variablen)
      * Methoden
@@ -27,6 +28,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
      * Klassen- sowie Exemplarinitialisierer
      * innere Klassen, innere Schnittstellen und innere Aufzählungen
      */
+	
 	private static final long serialVersionUID = 1552746400473185110L;
 	Thread gameProzess;
 	SaveDataLib saveDataLib;
@@ -49,6 +51,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	boolean down;
 	boolean left;
 	boolean right;
+	boolean iscollision;
 	int loopfrom;
 	
 	double stretch;
@@ -288,6 +291,13 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 			  else {
 				  debug=false;}
           }
+		  
+		  if(event.getKeyCode()==KeyEvent.VK_BACK_SPACE){
+			  if(iscollision==false){
+				  setIsCollision(true);}
+			  else {
+				  setIsCollision(false);}
+          }
 		
 		  if(event.getKeyCode()==KeyEvent.VK_UP)
 		  {
@@ -361,6 +371,11 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		return isTreated;
 	}
 
+	public void setIsCollision(boolean iscollision){
+		this.iscollision = iscollision;
+		terra.setIsCollision(iscollision);
+	}
+	
 
 
 }

@@ -5,6 +5,8 @@ import java.awt.image.BufferedImage;
 
 public class Player extends Sprite {
 	boolean isplayermoveable;
+
+
 	
 	private static final long serialVersionUID = -396974336584652524L;
 	public Player (BufferedImage[] images, long delay, GamePanel p) {
@@ -56,4 +58,6 @@ public class Player extends Sprite {
     @Override public void doLogic(){
     	super.doLogic();
     }
+    
+
 }
