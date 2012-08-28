@@ -135,6 +135,9 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		g.drawLine(getWidth()/2, 0, getWidth()/2, getHeight());
 		g.drawLine(getWidth()/2-1, 0, getWidth()/2-1, getHeight());
 		g.drawLine(0, getHeight()/2, getWidth(), getHeight()/2);
+		g.setColor(Color.BLUE);
+		g.drawString("x: "+playerposition.getX(), 10, 10);
+		g.drawString("y: "+playerposition.getY(), 10, 20);
 		}
 		
 		for(ListIterator<Sprite> it = painter.listIterator();it.hasNext();){
