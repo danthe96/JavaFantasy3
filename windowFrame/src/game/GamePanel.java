@@ -294,9 +294,11 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		  
 		  if(event.getKeyCode()==KeyEvent.VK_BACK_SPACE){
 			  if(iscollision==false){
-				  setIsCollision(true);}
+				  setIsCollision(true);
+				  speed=256;}
 			  else {
-				  setIsCollision(false);}
+				  setIsCollision(false);
+				  speed=48;}
           }
 		
 		  if(event.getKeyCode()==KeyEvent.VK_UP)
