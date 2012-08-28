@@ -7,8 +7,9 @@ Febbe/Danthe:
 -Debug-Indikator (HUD)
 -->	-Speed			:	implementiert	/Febbe
 	-Koordinaten		: 	implementiert 	/Febbe
-	-Kollisionsdebuganzeige	:	
+	-Kollisionsdebuganzeige	:	implementiert 	/Febbe
 -Warps
+-Bewegungsrichtung fixen
 -evtl. NPC Code
 
 [P.S.: vervollständigt MICH]

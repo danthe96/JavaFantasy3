@@ -138,6 +138,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		g.setColor(Color.BLUE);
 		g.drawString("x: "+playerposition.getX(), 10, 10);
 		g.drawString("y: "+playerposition.getY(), 10, 20);
+		g.drawString("Keine Kollision: "+ iscollision, 10, 30);
 		}
 		
 		for(ListIterator<Sprite> it = painter.listIterator();it.hasNext();){
