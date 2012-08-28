@@ -5,11 +5,10 @@ Marvin (IHICH):
 
 Febbe/Danthe:
 -Debug-Indikator (HUD)
+-->	-Speed			:	implementiert	/Febbe
+	-Koordinaten		: 	implementiert 	/Febbe
+	-Kollisionsdebuganzeige	:	
 -Warps
 -evtl. NPC Code
 
-Debug-Indikator (HUD):
--Speed: gefixt
--?
-
-[P.S.: verfolständigt MICH]
+[P.S.: vervollständigt MICH]
