@@ -8,4 +8,8 @@ Febbe/Danthe:
 -Warps
 -evtl. NPC Code
 
+Debug-Indikator (HUD):
+-Speed: gefixt
+-?
+
 [P.S.: verfolständigt MICH]
