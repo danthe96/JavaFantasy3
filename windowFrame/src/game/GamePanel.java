@@ -181,29 +181,27 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 			terra.setVerticalSpeed(0);
 		if(!left && !right)
 			terra.setHorizontalSpeed(0);
-		if(up){
-			if(!right && !left && !down){
+		if(up && !down){
 			terra.setVerticalSpeed(-speed);
+			if(!right && !left ){
 			terra.setLoop(0, 2);
 			}
 		}
-		if(down){
-			if(!right && !left && !up){
+		if(down&&!up){
 			terra.setVerticalSpeed(speed);
+			if(!right && !left){
 			terra.setLoop(6, 8);
 			}
 		}
-		if(left){
-			if(!right){
-			//terra.setVerticalSpeed(0);		
+		if(left&&!right){
 			terra.setHorizontalSpeed(-speed);
+			if(!up && !down){
 			terra.setLoop(9, 11);
 			}
 		}
-		if(right){
-			if(!left){
-			//terra.setVerticalSpeed(0);	
+		if(right&&!left){
 			terra.setHorizontalSpeed(speed);
+			if(!up && !down){
 			terra.setLoop(3, 5);
 			}
 		}
