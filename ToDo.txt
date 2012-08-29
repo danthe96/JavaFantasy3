@@ -8,8 +8,8 @@ Febbe/Danthe:
 -->	-Speed			:	implementiert	/Febbe
 	-Koordinaten		: 	implementiert 	/Febbe
 	-Kollisionsdebuganzeige	:	implementiert 	/Febbe
--Warps
--Bewegungsrichtung fixen
--evtl. NPC Code
+-Warps				:	
+-Bewegungsrichtung fixen	:	gefixt 		/Febbe
+-evtl. NPC Code			:	work in process	/Febbe
 
 [P.S.: vervollständigt MICH]
