@@ -27,7 +27,19 @@ public class Npc extends Sprite {
 					
 		}
 
-		
+	if(direction == 4)
+		{dx=0;dy=0;}
+		else{
+			if(direction == 3)
+			{dx=-64;dy=0;}
+			if(direction == 2)
+			{dx=0;dy=64;}
+			if(direction == 1)
+			{dx=64;dy=0;}
+			if(direction == 0)
+			{dx=0;dy=-64;}
+			
+		}
 		
 		
 		
@@ -50,13 +62,6 @@ public class Npc extends Sprite {
 			}
 		return check;
 	}
-	
-@Override
-public void move(){
-	
-	
-}
-	
-	
+		
 
 }
