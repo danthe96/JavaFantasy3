@@ -102,8 +102,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	      soundlib.loopSound("maintheme");
 	      actors = new Vector<Sprite>();                                       
           painter = new Vector<Sprite>(); 
-	      //terrasprite = loadPics("pics/Terra.png",12);
-	      terrasprite = loadPics("pics/Ghost.png",12);
+	      terrasprite = loadPics("pics/Terra.png",12);
 	      try {
 			shadow = ImageIO.read(getClass().getClassLoader().getResource("pics/overworldmapshadow.png"));
 		} catch (IOException e) {
