@@ -5,11 +5,14 @@ Marvin (IHICH):
 
 Febbe/Danthe:
 -Debug-Indikator (HUD)
--->	-Speed			:	implementiert	/Febbe
-	-Koordinaten		: 	implementiert 	/Febbe
-	-Kollisionsdebuganzeige	:	implementiert 	/Febbe
 -Warps				:	
--Bewegungsrichtung fixen	:	gefixt 		/Febbe
 -evtl. NPC Code			:	work in process	/Febbe
+
+-map klasse
+	-shadowmap
+	-void drawObjects
+		-zeichnung
+	-void doLogic
+	-void changeMap
 
 [P.S.: vervollständigt MICH]
