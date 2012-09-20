@@ -1,7 +1,7 @@
 package game.maps;
 
 import game.GamePanel;
-
+import java.awt.Graphics;
 import java.awt.geom.Point2D;
 import java.util.HashMap;
 
@@ -16,7 +16,7 @@ public abstract class Maps {
 	
 	public abstract void doLogic();
 	
-	public abstract void drawObjects();
+	public abstract void drawObjects(Graphics g);
 	
 	public void changeMap(Point2D.Double position){
 		currentMap = map.get(position) ;

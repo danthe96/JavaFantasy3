@@ -1,5 +1,7 @@
 package game.maps;
 
+import java.awt.Graphics;
+
 public class Test extends Maps {
 
 	@Override
@@ -9,7 +11,7 @@ public class Test extends Maps {
 	}
 
 	@Override
-	public void drawObjects() {
+	public void drawObjects(Graphics g) {
 		// TODO Auto-generated method stub
 
 	}
