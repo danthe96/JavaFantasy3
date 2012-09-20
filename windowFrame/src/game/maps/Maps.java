@@ -12,7 +12,8 @@ public abstract class Maps {
 	public static OverworldMap overworldmap;
 	public static Test test;
 	public static Maps currentMap;
-	
+	static int height; 
+	static int width;
 	
 	public abstract void doLogic();
 	
@@ -25,11 +26,17 @@ public abstract class Maps {
 		
 	}
 	
-	public static void implementMaps(GamePanel gameP){
+	public static void initialize(GamePanel gameP){
 		
 		gamePanel		= gameP;
 		overworldmap 	= new OverworldMap();			
 		test			= new Test()		;
+		
+		height = gameP.getHeight();
+		width = gameP.getWidth();
+		
+		
+		
 	}
 	
 	HashMap<Point2D.Double,Maps> map;

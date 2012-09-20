@@ -37,10 +37,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	BufferedImage shadow;
 	BufferedImage[] terrasprite;
 	
-	Point[][] mapsquareindex={{new Point(),new Point(),new Point()},{new Point(),new Point(),new Point()},{new Point(),new Point(),new Point()}}; //new Point[3][3];
-	int mapsquarewidth;
-	int mapsquareheight;
-	int setToCenter;
+	
 	int bildx;
 	int bildy;
 	
@@ -53,8 +50,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	boolean right;
 	boolean iscollision;
 	int loopfrom;
-	
-	double stretch;
+	static double stretch;
 	
 	
 	
@@ -79,36 +75,18 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
       this.setDoubleBuffered(true);
       this.setBackground(Color.BLACK);
       gameProzess.start();	
-      setToCenter=(getWidth()-getHeight())/2;
       initialize();
 
 	}
 	
 	public void initialize(){
-		stretch=(0.0+getHeight())/256;
-		try {
-			map = ImageIO.read(getClass().getClassLoader().getResource("pics/overworldmap.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	      for(int i=0;i<16;i++){
-				for(int j=0;j<16;j++){
-				   
-					 mapsquares[i][j] = map.getSubimage(256*i, 256*j, 256, 256);
-				}
-			} 
-	      map=null;
+		
+		  stretch=(0.0+getHeight())/256;
 	      soundlib.loadSound("maintheme","sounds/01-Terra.mp3");
 	      soundlib.loopSound("maintheme");
 	      actors = new Vector<Sprite>();                                       
           painter = new Vector<Sprite>(); 
 	      terrasprite = loadPics("pics/Terra.png",12);
-	      try {
-			shadow = ImageIO.read(getClass().getClassLoader().getResource("pics/overworldmapshadow.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	      playerposition = new Point2D.Double(3000 , 700);    //muss absolute Position benutzen
 	      terra = new Player(terrasprite,150,this);
 	      actors.add(terra);
@@ -122,14 +100,8 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		super.paintComponent(g);
 		
 		if(isStarted()){
-			for(int x = 0;x<3;x++){
-			for(int y = 0; y<3; y++){
-
-				g.drawImage(mapsquares[(int)mapsquareindex[x][y].getX()][(int)mapsquareindex[x][y].getY()],(setToCenter+getHeight()*(x-1))-mapsquarewidth, 
-						(getHeight()*(y-1))-mapsquareheight   , getHeight() ,getHeight()  ,this);
-			}
-			}
 		}
+		
 		if(debug){
 		g.drawImage(shadow, (int)(getWidth()/2-playerposition.getX()*stretch), (int)(getHeight()/2-playerposition.getY()*stretch), (int)(4096*stretch), (int)(4096*stretch), this);
 		g.drawLine(getWidth()/2, 0, getWidth()/2, getHeight());
