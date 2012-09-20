@@ -379,6 +379,10 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		this.iscollision = iscollision;
 		terra.setIsCollision(iscollision);
 	}
+
+	public void setPlayerposition(Point2D.Double playerposition) {
+		this.playerposition=playerposition;		
+	}
 	
 
 

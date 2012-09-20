@@ -15,6 +15,6 @@ Febbe/Danthe:
 	-void doLogic
 	-void changeMap
 	
-	-register für teleportpunkte ka wie bitte ideen in {} schreiben
+	-register für teleportpunkte ka wie bitte iden in {} schreiben
 
 [P.S.: vervollständigt MICH]
