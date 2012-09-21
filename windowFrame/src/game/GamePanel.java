@@ -3,8 +3,9 @@ package game;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.event.KeyEvent;
+
+import game.maps.Maps;
 import interfaces.BoolKeyListener;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
@@ -50,7 +51,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	boolean right;
 	boolean iscollision;
 	int loopfrom;
-	static double stretch;
+	public static double stretch;
 	
 	
 	
@@ -92,6 +93,8 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	      actors.add(terra);
 	      up = false; down = false; right = false; left = false;  
 	      speed = 48;   //speed muss konstant sein
+	      Maps.initialize(this);
+	      Maps.currentMap=Maps.overworldmap;
 	      setStarted(true);
 	}
 
@@ -100,6 +103,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		super.paintComponent(g);
 		
 		if(isStarted()){
+			Maps.currentMap.drawObjects(g);
 		}
 		
 		if(debug){
@@ -181,7 +185,11 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	}
 	
 	private void doLogic(){
-		int nextX;
+		
+		Maps.currentMap.doLogic(playerposition, bildx, bildy);
+		
+		
+		/*int nextX;
 		int nextY;
 		bildx = ((int)(playerposition.getX()/256));
 		bildy = ((int)(playerposition.getY()/256));
@@ -199,7 +207,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		
 		mapsquarewidth  = (int)(stretch*((playerposition.getX()-((bildx)*256)-128)));
 		mapsquareheight = (int)(stretch*((playerposition.getY()-((bildy)*256)-128)));
-
+		*/
 		
 		
 		for(ListIterator<Sprite> it = actors.listIterator(); it.hasNext();){                        

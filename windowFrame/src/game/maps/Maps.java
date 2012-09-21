@@ -15,7 +15,7 @@ public abstract class Maps {
 	static int height; 
 	static int width;
 	
-	public abstract void doLogic();
+	public abstract void doLogic(Point2D.Double playerposition,int bildx, int bildy);
 	
 	public abstract void drawObjects(Graphics g);
 	
