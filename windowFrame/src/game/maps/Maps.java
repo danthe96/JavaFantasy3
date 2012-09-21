@@ -9,7 +9,7 @@ import java.util.HashMap;
 public abstract class Maps {
 	
 	
-	private static GamePanel gamePanel;
+	protected static GamePanel gamePanel;
 	public static OverworldMap overworldmap;
 	public static Test test;
 	public static Maps currentMap;
@@ -20,6 +20,8 @@ public abstract class Maps {
 	public abstract void doLogic(Point2D.Double playerposition,int bildx, int bildy);
 	
 	public abstract void drawObjects(Graphics g);
+	
+	public abstract BufferedImage getShadowMap();
 	
 	public void changeMap(Point2D.Double position){
 		currentMap = map.get(position) ;

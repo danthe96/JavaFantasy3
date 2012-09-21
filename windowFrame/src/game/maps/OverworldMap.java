@@ -81,12 +81,19 @@ public class OverworldMap extends Maps {
 
 			g.drawImage(mapsquares[(int)mapsquareindex[x][y].getX()][(int)mapsquareindex[x][y].getY()],(setToCenter+height*(x-1))-mapsquarewidth, 
 					(height*(y-1))-mapsquareheight   , height ,height  ,null);
+		
 		}
 		}
 		
 		
 		
 		
+	}
+
+
+	@Override
+	public BufferedImage getShadowMap() {
+		return shadow;
 	}
 		
 

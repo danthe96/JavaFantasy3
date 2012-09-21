@@ -57,7 +57,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	
 	boolean debug; //debug
 
-	Point2D.Double playerposition;
+	public Point2D.Double playerposition;
 	SoundLib soundlib;
 	Player terra;
 	MainFrame mF;
@@ -75,7 +75,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
       this.setLayout(null);
       this.setDoubleBuffered(true);
       this.setBackground(Color.BLACK);
-      gameProzess.start();	
+      gameProzess.start();
       initialize();
 
 	}
@@ -95,6 +95,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	      speed = 48;   //speed muss konstant sein
 	      Maps.initialize(this);
 	      Maps.currentMap=Maps.overworldmap;
+	      shadow=Maps.currentMap.getShadowMap();
 	      setStarted(true);
 	}
 
@@ -107,7 +108,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		}
 		
 		if(debug){
-		g.drawImage(Maps.currentMap.shadow, (int)(getWidth()/2-playerposition.getX()*stretch), (int)(getHeight()/2-playerposition.getY()*stretch), (int)(4096*stretch), (int)(4096*stretch), this);
+		g.drawImage(shadow, (int)(getWidth()/2-playerposition.getX()*stretch), (int)(getHeight()/2-playerposition.getY()*stretch), (int)(4096*stretch), (int)(4096*stretch), this);
 		g.drawLine(getWidth()/2, 0, getWidth()/2, getHeight());
 		g.drawLine(getWidth()/2-1, 0, getWidth()/2-1, getHeight());
 		g.drawLine(0, getHeight()/2, getWidth(), getHeight()/2);
