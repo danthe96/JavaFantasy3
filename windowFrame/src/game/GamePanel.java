@@ -107,7 +107,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		}
 		
 		if(debug){
-		g.drawImage(shadow, (int)(getWidth()/2-playerposition.getX()*stretch), (int)(getHeight()/2-playerposition.getY()*stretch), (int)(4096*stretch), (int)(4096*stretch), this);
+		g.drawImage(Maps.currentMap.shadow, (int)(getWidth()/2-playerposition.getX()*stretch), (int)(getHeight()/2-playerposition.getY()*stretch), (int)(4096*stretch), (int)(4096*stretch), this);
 		g.drawLine(getWidth()/2, 0, getWidth()/2, getHeight());
 		g.drawLine(getWidth()/2-1, 0, getWidth()/2-1, getHeight());
 		g.drawLine(0, getHeight()/2, getWidth(), getHeight()/2);

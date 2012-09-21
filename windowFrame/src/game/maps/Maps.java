@@ -3,6 +3,7 @@ package game.maps;
 import game.GamePanel;
 import java.awt.Graphics;
 import java.awt.geom.Point2D;
+import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
 public abstract class Maps {
@@ -12,6 +13,7 @@ public abstract class Maps {
 	public static OverworldMap overworldmap;
 	public static Test test;
 	public static Maps currentMap;
+	public BufferedImage shadow;
 	static int height; 
 	static int width;
 	

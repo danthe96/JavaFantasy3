@@ -15,7 +15,7 @@ public class OverworldMap extends Maps {
 
 	BufferedImage[][] mapsquares = new BufferedImage[16][16];
 	BufferedImage map;
-	BufferedImage shadow;
+	public BufferedImage shadow;
 	
 	Point[][] mapsquareindex={{new Point(),new Point(),new Point()},{new Point(),new Point(),new Point()},{new Point(),new Point(),new Point()}}; //new Point[3][3];
 	
