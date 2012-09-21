@@ -31,14 +31,15 @@ public abstract class Maps {
 	}
 	
 	public static void initialize(GamePanel gameP){
+		height = gameP.getHeight();
+		width  = gameP.getWidth() ;
 		
 		gamePanel		= gameP;
 		overworldmap 	= new OverworldMap();			
 		test			= new Test()		;
 		
-		height = gameP.getHeight();
-		width = gameP.getWidth();
-		
+
+		System.out.println(width);
 		
 		
 	}

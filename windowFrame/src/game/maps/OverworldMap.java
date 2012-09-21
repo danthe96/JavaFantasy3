@@ -27,6 +27,7 @@ public class OverworldMap extends Maps {
 	
 	public OverworldMap(){		
 		setToCenter=(width-height)/2;
+		System.out.println(setToCenter);
 		
 		try {
 			map = ImageIO.read(getClass().getClassLoader().getResource("pics/overworldmap.png"));

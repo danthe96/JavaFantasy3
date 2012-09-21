@@ -85,7 +85,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		  stretch=(0.0+getHeight())/256;
 	      soundlib.loadSound("maintheme","sounds/01-Terra.mp3");
 	      soundlib.loopSound("maintheme");
-	      actors = new Vector<Sprite>();                                       
+	      actors  = new Vector<Sprite>();                                       
           painter = new Vector<Sprite>(); 
 	      terrasprite = loadPics("pics/Terra.png",12);
 	      playerposition = new Point2D.Double(3000 , 700);    //muss absolute Position benutzen
@@ -123,11 +123,6 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
             r.drawObjects(g);   
         }
 			
-		
-		
-	
-		
-		
 	}
 		
 	
