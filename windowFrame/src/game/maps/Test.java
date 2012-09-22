@@ -24,4 +24,10 @@ public class Test extends Maps {
 		return null;
 	}
 
+	@Override
+	public void changeMap(Double position) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

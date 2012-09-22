@@ -7,6 +7,7 @@ import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
@@ -46,13 +47,16 @@ public class OverworldMap extends Maps {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+	      	
+	      hashMapMaps=new HashMap<Point2D.Double,Maps>();
+	      teleMap=new HashMap<Point2D.Double , Point2D.Double>();
 	   
 	      hashMapMaps.put(new Point2D.Double(73,93) ,  overworldmap );
 	      hashMapMaps.put(new Point2D.Double(75,102) , overworldmap );
 	      hashMapMaps.put(new Point2D.Double(102,100) ,overworldmap );
 	      hashMapMaps.put(new Point2D.Double(98,90) ,  overworldmap );
 	      hashMapMaps.put(new Point2D.Double(104,64) , overworldmap );
-	      hashMapMaps.put(new Point2D.Double(157,35) , overworldmap );
+	      hashMapMaps.put(new Point2D.Double(165,34) , overworldmap );
 	      hashMapMaps.put(new Point2D.Double(93, 39) , overworldmap );
 	   
 	      teleMap.put(new Point2D.Double(73,93)  , new Point2D.Double(75,103) );
@@ -60,7 +64,7 @@ public class OverworldMap extends Maps {
 	      teleMap.put(new Point2D.Double(102,100), new Point2D.Double(98,91)  );
 	      teleMap.put(new Point2D.Double(98,90)  , new Point2D.Double(102,101));
 	      teleMap.put(new Point2D.Double(104,64) , new Point2D.Double(93, 40) );
-	      teleMap.put(new Point2D.Double(157,35) , new Point2D.Double(104,65) );
+	      teleMap.put(new Point2D.Double(165,34) , new Point2D.Double(104,65) );
 	      teleMap.put(new Point2D.Double(93, 39) , new Point2D.Double(157,36) );
 	      
 	}
@@ -93,12 +97,12 @@ public class OverworldMap extends Maps {
 	public void drawObjects(Graphics g) {
 
 		for(int x = 0;x<3;x++){
-		for(int y = 0; y<3; y++){
+			for(int y = 0;y<3;y++){
 
-			g.drawImage(mapsquares[(int)mapsquareindex[x][y].getX()][(int)mapsquareindex[x][y].getY()],(setToCenter+height*(x-1))-mapsquarewidth, 
-					(height*(y-1))-mapsquareheight   , height ,height  ,null);
+				g.drawImage	(mapsquares[(int)mapsquareindex[x][y].getX()][(int)mapsquareindex[x][y].getY()],(setToCenter+height*(x-1))-mapsquarewidth, 
+							(height*(y-1))-mapsquareheight   , height ,height  ,null);
 		
-		}
+			}
 		}
 		
 		
@@ -107,6 +111,16 @@ public class OverworldMap extends Maps {
 	}
 
 
+	@Override
+	public void changeMap(Point2D.Double position){
+		System.out.println(position);
+		Maps.currentMap = hashMapMaps.get(position);
+		gamePanel.setPlayerposition(teleMap.get(position));
+		System.out.println(Maps.currentMap+" , "+teleMap.get(position));
+				
+	}
+	
+	
 	@Override
 	public BufferedImage getShadowMap() {
 		return shadow;

@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+
+import game.maps.Maps;
 import interfaces.Drawable;
 import interfaces.Movable;
 
@@ -104,6 +106,7 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 	    int rgbcol2  = shadow.getRGB((int)(checkPoint2.x/16), (int)(checkPoint2.y/16));
 	    c1 = new Color(rgbcol1);
 	    c2 = new Color(rgbcol2);
+
 	  }   // /////Ende\\\\\\
 	  
 	  
@@ -161,12 +164,19 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 
 	    collcolor();
 
+	    
+	    
 	    if(c1.equals(Color.RED)||c2.equals(Color.RED)){
 
 	      willupcoll=true;
 	    }
 
-	    else {willupcoll=false;}
+	    else{	willupcoll=false;
+	    		if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
+	    			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)-1));
+	    		}
+	    }
+	    
 	  } 
   
   

@@ -51,13 +51,13 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	boolean right;
 	boolean iscollision;
 	int loopfrom;
-	public static double stretch;
+							public static double stretch;
 	
 	
 	
 	boolean debug; //debug
 
-	public Point2D.Double playerposition;
+							public Point2D.Double playerposition;
 	SoundLib soundlib;
 	Player terra;
 	MainFrame mF;
@@ -103,7 +103,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		
-		if(isStarted()){
+		if(isStarted()){ 
 			Maps.currentMap.drawObjects(g);
 		}
 		

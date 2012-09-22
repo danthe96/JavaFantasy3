@@ -23,12 +23,7 @@ public abstract class Maps {
 	
 	public abstract BufferedImage getShadowMap();
 	
-	public void changeMap(Point2D.Double position){
-		currentMap = hashMapMaps.get(position) ;
-		gamePanel.setPlayerposition(teleMap.get(position));
-		
-		
-	}
+	public abstract void changeMap(Point2D.Double position);
 	
 	public static void initialize(GamePanel gameP){
 		height = gameP.getHeight();
@@ -41,7 +36,7 @@ public abstract class Maps {
 		
 	}
 	
-	HashMap<Point2D.Double,Maps> hashMapMaps=new HashMap<Point2D.Double,Maps>();
-	HashMap<Point2D.Double,Point2D.Double> teleMap=new HashMap<Point2D.Double , Point2D.Double>();
+	HashMap<Point2D.Double,Maps> hashMapMaps;
+	HashMap<Point2D.Double,Point2D.Double> teleMap;
 	
 }

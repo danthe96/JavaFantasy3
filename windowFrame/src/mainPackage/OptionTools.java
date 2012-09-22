@@ -7,6 +7,13 @@ import java.util.regex.Pattern;
 
 class OptionTools {
 	
+	
+    public static int WindowWidth;				
+	public static int WindowHeight;				
+	
+	
+	
+	
 	static void IOoptionloader() {
 		BufferedReader options = null;
 		while(true){
