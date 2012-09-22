@@ -27,7 +27,6 @@ public class OverworldMap extends Maps {
 	
 	public OverworldMap(){		
 		setToCenter=(width-height)/2;
-		System.out.println(setToCenter);
 		
 		try {
 			map = ImageIO.read(getClass().getClassLoader().getResource("pics/overworldmap.png"));
@@ -47,6 +46,22 @@ public class OverworldMap extends Maps {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+	   
+	      hashMapMaps.put(new Point2D.Double(73,93) ,  overworldmap );
+	      hashMapMaps.put(new Point2D.Double(75,102) , overworldmap );
+	      hashMapMaps.put(new Point2D.Double(102,100) ,overworldmap );
+	      hashMapMaps.put(new Point2D.Double(98,90) ,  overworldmap );
+	      hashMapMaps.put(new Point2D.Double(104,64) , overworldmap );
+	      hashMapMaps.put(new Point2D.Double(157,35) , overworldmap );
+	      hashMapMaps.put(new Point2D.Double(93, 39) , overworldmap );
+	   
+	      teleMap.put(new Point2D.Double(73,93)  , new Point2D.Double(75,103) );
+	      teleMap.put(new Point2D.Double(75,102) , new Point2D.Double(73,94)  );
+	      teleMap.put(new Point2D.Double(102,100), new Point2D.Double(98,91)  );
+	      teleMap.put(new Point2D.Double(98,90)  , new Point2D.Double(102,101));
+	      teleMap.put(new Point2D.Double(104,64) , new Point2D.Double(93, 40) );
+	      teleMap.put(new Point2D.Double(157,35) , new Point2D.Double(104,65) );
+	      teleMap.put(new Point2D.Double(93, 39) , new Point2D.Double(157,36) );
 	      
 	}
 	
