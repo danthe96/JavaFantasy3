@@ -61,7 +61,7 @@ public class OverworldMap extends Maps {
 	   
 	      teleMap.put(new Point2D.Double(73,93)  , new Point2D.Double(75,103) );
 	      teleMap.put(new Point2D.Double(75,102) , new Point2D.Double(73,94)  );
-	      teleMap.put(new Point2D.Double(102,100), new Point2D.Double(98,91)  );
+	      teleMap.put(new Point2D.Double(102,100), new Point2D.Double(98,93)  );
 	      teleMap.put(new Point2D.Double(98,90)  , new Point2D.Double(102,101));
 	      teleMap.put(new Point2D.Double(104,64) , new Point2D.Double(93, 40) );
 	      teleMap.put(new Point2D.Double(165,34) , new Point2D.Double(104,65) );
@@ -95,7 +95,6 @@ public class OverworldMap extends Maps {
 
 	@Override
 	public void drawObjects(Graphics g) {
-
 		for(int x = 0;x<3;x++){
 			for(int y = 0;y<3;y++){
 
@@ -113,10 +112,10 @@ public class OverworldMap extends Maps {
 
 	@Override
 	public void changeMap(Point2D.Double position){
-		System.out.println(position);
-		Maps.currentMap = hashMapMaps.get(position);
-		gamePanel.setPlayerposition(teleMap.get(position));
-		System.out.println(Maps.currentMap+" , "+teleMap.get(position));
+		if(hashMapMaps.containsKey(position) && hashMapMaps.get(position)!= null)
+		         currentMap = hashMapMaps.get(position);		
+		if(teleMap.containsKey(position))
+			gamePanel.setPlayerposition(new Point2D.Double(teleMap.get(position).getX()*16,teleMap.get(position).getY()*16));
 				
 	}
 	

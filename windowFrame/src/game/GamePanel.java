@@ -94,7 +94,7 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 	      up = false; down = false; right = false; left = false;  
 	      speed = 48;   //speed muss konstant sein
 	      Maps.initialize(this);
-	      Maps.currentMap=Maps.overworldmap;
+	      Maps.currentMap = Maps.overworldmap;
 	      shadow=Maps.currentMap.getShadowMap();
 	      setStarted(true);
 	}
@@ -113,8 +113,8 @@ public class GamePanel extends JPanel implements Runnable, BoolKeyListener {
 		g.drawLine(getWidth()/2-1, 0, getWidth()/2-1, getHeight());
 		g.drawLine(0, getHeight()/2, getWidth(), getHeight()/2);
 		g.setColor(Color.BLUE);
-		g.drawString("x: "+playerposition.getX(), 10, 10);
-		g.drawString("y: "+playerposition.getY(), 10, 20);
+		g.drawString("x: "+(int)(playerposition.getX()/16), 10, 10);
+		g.drawString("y: "+(int)(playerposition.getY()/16), 10, 20);
 		g.drawString("Keine Kollision: "+ iscollision, 10, 30);
 		}
 		
