@@ -1,6 +1,5 @@
 package sounds;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.*;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 import javazoom.jl.decoder.JavaLayerException;
@@ -41,8 +40,9 @@ public class SoundLib {
   private void playSound(String name){
   	try {
   		nextSound=name;
-		audio = new AdvancedPlayer(new FileInputStream(getClass().getClassLoader().getResource(sounds.get(nextSound)).getFile()));
-	} catch (FileNotFoundException | JavaLayerException e) {
+  		InputStream input = ClassLoader.getSystemClassLoader().getResourceAsStream(sounds.get(nextSound));
+		audio = new AdvancedPlayer(input);
+	} catch (JavaLayerException e) {
 		e.printStackTrace();
 	}
 	  
