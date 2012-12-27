@@ -115,7 +115,7 @@ public class OverworldMap extends Maps {
 		if(hashMapMaps.containsKey(position) && hashMapMaps.get(position)!= null)
 		         currentMap = hashMapMaps.get(position);		
 		if(teleMap.containsKey(position))
-			gamePanel.setPlayerposition(new Point2D.Double(teleMap.get(position).getX()*16,teleMap.get(position).getY()*16));
+			gamePanel.setPlayerposition(new Point2D.Double((teleMap.get(position).getX()+0.5)*16,(teleMap.get(position).getY()+0.5)*16));
 				
 	}
 	
