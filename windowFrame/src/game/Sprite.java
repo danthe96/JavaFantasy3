@@ -119,7 +119,10 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 	    if(c1.equals(Color.RED)||c2.equals(Color.RED)){                 //vergleichen der Punkte
 	      willdowncoll = true;
 	    }
-	    else {willdowncoll = false;}
+	    else {willdowncoll = false;
+	    if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
+			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)));
+		}}
 	  }     //  /////Ende\\\\\\
 	  
 	  
@@ -136,7 +139,10 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 
 	    }
 
-	    else{willrightcoll =false ;}
+	    else{willrightcoll =false ;
+	    if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
+			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)));
+		}}
 
 	  }      //  /////Ende\\\\\\
 	  
@@ -154,7 +160,11 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 	      willleftcoll=true;
 	    }
 
-	    else {willleftcoll=false;}
+	    else {willleftcoll=false;
+	    if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
+			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)));
+		}
+	    }
 	  }     //  /////Ende\\\\\\
 	  
 	  public void collup(){                                                         //void zum überprüfen ob man oben kollidiert
@@ -174,6 +184,7 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 	    else{	willupcoll=false;
 	    		if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
 	    			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)-1));
+	    			
 	    		}
 	    }
 	    
