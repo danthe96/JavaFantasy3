@@ -51,21 +51,25 @@ public class OverworldMap extends Maps {
 	      hashMapMaps=new HashMap<Point2D.Double,Maps>();
 	      teleMap=new HashMap<Point2D.Double , Point2D.Double>();
 	   
-	      hashMapMaps.put(new Point2D.Double(73,93) ,  overworldmap );
+	      hashMapMaps.put(new Point2D.Double(73,93)  , overworldmap );
 	      hashMapMaps.put(new Point2D.Double(75,102) , overworldmap );
 	      hashMapMaps.put(new Point2D.Double(102,100) ,overworldmap );
-	      hashMapMaps.put(new Point2D.Double(98,92) ,  overworldmap );
+	      hashMapMaps.put(new Point2D.Double(98,92)  , overworldmap );
 	      hashMapMaps.put(new Point2D.Double(104,64) , overworldmap );
 	      hashMapMaps.put(new Point2D.Double(165,34) , overworldmap );
-	      hashMapMaps.put(new Point2D.Double(93, 39) , overworldmap );
+	      hashMapMaps.put(new Point2D.Double(93,39)  , overworldmap );
+	      hashMapMaps.put(new Point2D.Double(185,93) , overworldmap );
+	      hashMapMaps.put(new Point2D.Double(214,148) , overworldmap );
 	   
 	      teleMap.put(new Point2D.Double(73,93)  , new Point2D.Double(75,103) );
 	      teleMap.put(new Point2D.Double(75,102) , new Point2D.Double(73,94)  );
 	      teleMap.put(new Point2D.Double(102,100), new Point2D.Double(98,93)  );
 	      teleMap.put(new Point2D.Double(98,92)  , new Point2D.Double(102,101));
 	      teleMap.put(new Point2D.Double(104,64) , new Point2D.Double(93, 40) );
-	      teleMap.put(new Point2D.Double(165,34) , new Point2D.Double(104,65) );
-	      teleMap.put(new Point2D.Double(93, 39) , new Point2D.Double(157,36) );
+	      teleMap.put(new Point2D.Double(165,35) , new Point2D.Double(104,65) );
+	      teleMap.put(new Point2D.Double(93,39) , new Point2D.Double(165,36) );
+	      teleMap.put(new Point2D.Double(185,93), new Point2D.Double(214, 149));
+	      teleMap.put(new Point2D.Double(214,148), new Point2D.Double(185, 94));
 	      
 	}
 	

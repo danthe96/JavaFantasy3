@@ -121,7 +121,7 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 	    }
 	    else {willdowncoll = false;
 	    if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
-			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)));
+			Maps.currentMap.changeMap(new Point2D.Double((int)(checkPoint1.x/16),(int)(checkPoint1.y/16)));
 		}}
 	  }     //  /////Ende\\\\\\
 	  
@@ -141,7 +141,7 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 
 	    else{willrightcoll =false ;
 	    if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
-			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)));
+			Maps.currentMap.changeMap(new Point2D.Double((int)(checkPoint1.x/16),(int)(checkPoint1.y/16)));
 		}}
 
 	  }      //  /////Ende\\\\\\
@@ -162,7 +162,7 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 
 	    else {willleftcoll=false;
 	    if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
-			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)));
+			Maps.currentMap.changeMap(new Point2D.Double((int)(checkPoint1.x/16),(int)(checkPoint1.y/16)));
 		}
 	    }
 	  }     //  /////Ende\\\\\\
@@ -183,7 +183,7 @@ public abstract class Sprite extends Rectangle2D.Double implements Drawable,Mova
 
 	    else{	willupcoll=false;
 	    		if(c1.equals(Color.GREEN)&&c2.equals(Color.GREEN)){
-	    			Maps.currentMap.changeMap(new Point2D.Double((int)(playerposition.getX()/16),(int)(playerposition.getY()/16)-1));
+	    			Maps.currentMap.changeMap(new Point2D.Double((int)(checkPoint1.x/16),(int)(checkPoint1.y/16)-1));
 	    			
 	    		}
 	    }
